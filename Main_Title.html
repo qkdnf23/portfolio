@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TA 포트폴리오</title>
+    <link rel="stylesheet" href="MainStyle.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 📌 Three.js가 돌도록 모듈 스크립트 연결 -->
+</head>
+
+<body>
+    <header>
+        <h1>Paul Kim</h1>
+    </header>
+
+    <nav class="side-nav">
+      <ul>
+        <li><a href="#aboutme">About Me</a></li>
+        <li><a href="#preindustry">Pre-Industry</a></li>
+        <li><a href="#industryworks">Industry-Works</a></li>
+      </ul>
+    </nav>
+
+    <main>
+        <section id="aboutme" class="title">
+          <h2 class="section-title">about me</h2>
+          <p>안녕하세요! 제 이름은 김바울 입니다! 그리고 저는</p>
+          <p>50% Artist🎨 이고</p>
+          <p>50% Engineer⚙️ 이자</p>
+          <p>100% Technical Artist😎 입니다!</p>
+          <p>그리고 and 100% Full Time Biker🏍️ 입니다!</p>
+        </section>
+        <section class="projects">
+          <a href="about.html" class="about_card">
+            <img src="assets/thumbnails/aboutme_Logo.png" alt="project 0" />
+            <p>Paul Kim</p>
+          </a>
+        </section>
+              
+        <section id ="preindustry" class="title">
+          <h2 class="section-title">Pre-Industry</h2>
+        </section>
+
+        <section class="projects">
+              <div class="card">
+                <img src="assets/thumbnails/XRX_Logo.png" alt="project 0" />
+                <p>UDK 공부</p>
+              </div>
+
+              <div class="card">
+                <img src="assets/thumbnails/XRX_Logo.png" alt="project 1" />
+                <p>졸업작품</p>
+              </div>
+        </section>
+
+        <section id="industryworks" class="title">
+          <h2 class="section-title">Industry-Works</h2>
+        </section>
+        <section class="projects">
+              <div class="card"
+                   onclick="playVideo(this)"
+                   onmouseenter="setBackground('giant')">
+                <img src="assets/thumbnails/GiantFishing_Logo.png" alt="project 0" />
+                <p>Giant Fishing</p>
+                <video src="assets/videos/GiantFishing_Trailer.mp4" controls style="display: none;"></video>
+              </div>
+
+              <div class="card"
+                   onclick="playVideo(this)"
+                   onmouseenter="setBackground('rise')">
+                <img src="assets/thumbnails/Rise_Logo_4.png" alt="project 1" />
+                <p>라이즈</p>
+                <video src="assets/videos/Rise_Trailer_1.mp4" controls style="display: none;"></video>
+              </div>
+
+              <div class="card"
+                   onclick="playVideo(this)"
+                   onmouseenter="setBackground('xrx')">
+                <img src="assets/thumbnails/XRX_Logo.png" alt="project 2" />
+                <p>XRX</p>
+                <video src="assets/videos/XRX_Intro.mp4" controls style="display: none;"></video>
+              </div>
+
+              <div class="card"
+                   onclick="playVideo(this)"
+                   onmouseenter="setBackground('lostark')">
+                <img src="assets/thumbnails/LostarkMobile_Logo.jpg" alt="project 3" />
+                <p>로스트아크 모바일</p>
+                <video src="assets/videos/LostarkMobile_Trailer.mp4" controls style="display: none;"></video>
+              </div>
+
+          
+        </section>
+    </main>
+
+    <footer>
+        <p>📥qkdnf1235@gmail.com</p>
+    </footer>
+
+    <script>
+        function playVideo(card) {
+          const videoEl = card.querySelector("video");
+          const modal = document.getElementById("videoModal");
+          const modalVideo = document.getElementById("modalVideo");
+      
+          if (!videoEl) return;
+      
+          // 비디오 소스를 모달로 복사
+          modalVideo.src = videoEl.src;
+          modal.style.display = "block";
+          modalVideo.play();
+        }
+      
+        function closeModal() {
+          const modal = document.getElementById("videoModal");
+          const modalVideo = document.getElementById("modalVideo");
+      
+          modal.style.display = "none";
+          modalVideo.pause();
+          modalVideo.currentTime = 0;
+          modalVideo.src = "";
+        }
+      
+        // 모달 바깥 클릭 시 닫기
+        window.onclick = function (event) {
+          const modal = document.getElementById("videoModal");
+          if (event.target === modal) {
+            closeModal();
+          }
+        };
+    </script>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">×</span>
+          <video id="modalVideo" src="" controls autoplay></video>
+        </div>
+    </div>
+    <script>
+      function setBackground(project) {
+        const backgrounds = {
+          rise: "assets/thumbnails/backgrounds/Rise.png",
+          lostark: "assets/thumbnails/backgrounds/Lostark_Mobile.png",
+          xrx: "assets/thumbnails/backgrounds/XRX.png",
+          giant: "assets/thumbnails/backgrounds/Giant_Fishing.png",
+          aboutme: "assets/thumbnails/backgrounds/aboutme.png"
+        };
+
+        const image = backgrounds[project];
+        if (image) {
+          document.body.style.backgroundImage = `url('${image}')`;
+        }
+      }
+
+      function resetBackground() {
+        document.body.style.backgroundImage = "none"; // or 기본 이미지
+      }
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.about_card, .card').forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            document.getElementById('bg-canvas').classList.add('hidden');
+          });
+          card.addEventListener('mouseleave', () => {
+            document.getElementById('bg-canvas').classList.remove('hidden');
+          });
+        });
+      });
+    </script>
+
+</body>
+
+</html>

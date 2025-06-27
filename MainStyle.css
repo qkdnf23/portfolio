@@ -1,0 +1,204 @@
+/* 🎯 배경용 Three.js 캔버스 */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#bg-canvas.hidden {
+  opacity: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-attachment: fixed;
+    background-color: #121212;
+    background-image: url("assets/thumbnails/backgrounds/default_black.png");;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+    padding: 0;
+    transition: background-image 0.2s ease-in-out;
+
+  }
+
+  body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: inherit;      /* body 배경 그대로 사용 */
+  background-size: 130% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);             /* ✅ 블러 강도 조절 */
+  opacity: 1.0;                   /* ✅ 흐림 정도 조절 */
+  z-index: -1;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  }
+
+  header {
+    text-align: center;
+    padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top:4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  
+  }
+
+  .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+.title p {
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  .card {
+    background: #1e1e1e;
+    text-align: center;
+    font-size: 36px;
+    padding: 1rem;
+    transform: scale(0.5);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 💡 기본 그림자 */
+    margin-bottom: -5rem;
+    margin-top: -8rem;
+  }
+  .about_card {
+    background: #1e1e1e;
+    text-align: center;
+    font-size: 72px;
+    padding: 1rem;
+    transform: scale(0.2);
+    margin-bottom: -38rem;
+    margin-top: -45rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 💡 기본 그림자 */
+  }
+
+  .about_card:hover {
+    transform: scale(0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  .about_card img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+
+  .card:hover {
+    transform: scale(0.6);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  .card img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  /* 모달 전체 영역 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  /* 모달 안 컨텐츠 */
+  .modal-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .modal video {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+  
+  /* 닫기 버튼 */
+  .close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+  }
+  footer
+  {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  html {
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+  }
+
+  .side-nav {
+    position: fixed;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-200%);
+    z-index: 100;
+  }
+
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .side-nav li {
+    margin: 1rem 0;
+  }
+
+  .side-nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+  }
+
+  .side-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
