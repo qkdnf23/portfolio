@@ -2,227 +2,46 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TA 포트폴리오</title>
-    <link rel="stylesheet" href="MainStyle.css" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 📌 Three.js가 돌도록 모듈 스크립트 연결 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TA 포트폴리오</title>
+  <link rel="stylesheet" href="styles/MainStyle.css" />
+  <link rel="stylesheet" href="styles/Background.css" />
+  <link rel="stylesheet" href="styles/Layout.css" />
+  <link rel="stylesheet" href="styles/CardStyle.css" />
+  <link rel="stylesheet" href="styles/Modal.css" />
+  <link rel="stylesheet" href="styles/Footer.css" />
 </head>
 
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="assets/videos/Loskarkmobile_Ghostslaer2.mp4" type="video/mp4">
-    </video>
-    <header>
-        <h1>Paul Kim</h1>
-    </header>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="assets/videos/Loskarkmobile_Ghostslaer2.mp4" type="video/mp4">
+  </video>
 
-    <nav class="side-nav">
-      <ul>
-        <li><a href="#aboutme">About Me</a></li>
-        <li><a href="#industryworks">Industry-Works</a></li>
-        <li><a href="#preindustry">Pre-Industry</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
-    </nav>
+  <header>
+    <h1>Paul Kim</h1>
+  </header>
 
-    <main>
-        <section id="aboutme" class="title">
-          <h2 class="section-title">about me</h2>
-          <p>안녕하세요! 제 이름은 김바울 입니다! 그리고 저는</p>
-          <p>50% Artist🎨 이고</p>
-          <p>50% Engineer⚙️ 이자</p>
-          <p>100% Technical Artist😎 입니다!</p>
-          <p>그리고 and 100% Full Time Biker🏍️ 입니다!</p>
-        </section>
-        <section class="projects">
-          <a href="about.html" class="about_card">
-            <img src="assets/thumbnails/aboutme_Logo.webp" alt="project 0" />
-            <p>Paul Kim</p>
-          </a>
-        </section>
+  <nav class="side-nav">
+    <ul>
+      <li><a href="#aboutme">About Me</a></li>
+      <li><a href="#industryworks">Industry-Works</a></li>
+      <li><a href="#preindustry">Pre-Industry</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </nav>
 
-        <section id="industryworks" class="title">
-          <h2 class="section-title">Industry-Works</h2>
-        </section>
-        <section class="projects">
-              <div class="card"
-                   onclick="playVideo(this)"
-                   onmouseenter="setBackground('giant')"
-                    onmouseleave="resetBackground()">
-                <img src="assets/thumbnails/GiantFishing_Logo.webp" alt="project 0" />
-                <p>Giant Fishing</p>
-                <video src="assets/videos/GiantFishing_Trailer.mp4" controls style="display: none;"></video>
-              </div>
+  <main id="main-content">
+    <!-- 여기에 동적으로 섹션들이 삽입됩니다 -->
+  </main>
 
-              <div class="card"
-                   onclick="playVideo(this)"
-                   onmouseenter="setBackground('rise')"
-                    onmouseleave="resetBackground()">
-                <img src="assets/thumbnails/Rise_Logo_4.webp" alt="project 1" />
-                <p>라이즈</p>
-                <video src="assets/videos/Rise_Trailer_1.mp4" controls style="display: none;"></video>
-              </div>
+  <footer>
+    <p>📥qkdnf1235@gmail.com</p>
+  </footer>
 
-              <div class="card"
-                   onclick="playVideo(this)"
-                   onmouseenter="setBackground('xrx')"
-                    onmouseleave="resetBackground()">
-                <img src="assets/thumbnails/XRX_Logo.webp" alt="project 2" />
-                <p>XRX</p>
-                <video src="assets/videos/XRX_Intro.mp4" controls style="display: none;"></video>
-              </div>
-
-              <div class="card"
-                   onclick="playVideo(this)"
-                   onmouseenter="setBackground('lostark')"
-                   onmouseleave="resetBackground()">
-                <img src="assets/thumbnails/LostarkMobile_Logo.webp" alt="project 3" />
-                <p>로스트아크 모바일</p>
-                <video src="assets/videos/LostarkMobile_Trailer.mp4" controls style="display: none;"></video>
-              </div>
-
-          
-        </section>
-              
-        <section id ="preindustry" class="title">
-          <h2 class="section-title">Pre-Industry</h2>
-        </section>
-
-        <section class="projects">
-              <div class="pre_card">
-                <img src="assets/thumbnails/XRX_Logo.webp" alt="project 0" />
-                <p>언리얼 공부</p>
-              </div>
-
-              <div class="pre_card">
-                <img src="assets/thumbnails/XRX_Logo.webp" alt="project 1" />
-                <p>졸업작품</p>
-              </div>
-        </section>
-
-        <section id ="skills" class="title">
-          <h2 class="section-title">Skills</h2>
-        </section>
-        <section class="projects">
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/ue.webp" alt="skill 0" />
-            <p>언리얼 엔진</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/uni.webp" alt="skill 1" />
-            <p>유니티 엔진</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/max.webp" alt="skill 2" />
-            <p>3D Max</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/ps.webp" alt="skill 3" />
-            <p>Photoshop</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/cp.webp" alt="skill 4" />
-            <p>C++</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/cs.webp" alt="skill 5" />
-            <p>C#</p>
-          </div>
-
-          <div class="pre_card">
-            <img src="assets/thumbnails/Logo/py.webp" alt="skill 6" />
-            <p>Python</p>
-          </div>
-
-
-        </section>
-    </main>
-
-    <footer>
-        <p>📥qkdnf1235@gmail.com</p>
-    </footer>
-
-    <script>
-        function playVideo(card) {
-          const videoEl = card.querySelector("video");
-          const modal = document.getElementById("videoModal");
-          const modalVideo = document.getElementById("modalVideo");
-      
-          if (!videoEl) return;
-      
-          // 비디오 소스를 모달로 복사
-          modalVideo.src = videoEl.src;
-          modal.style.display = "block";
-          modalVideo.play();
-        }
-      
-        function closeModal() {
-          const modal = document.getElementById("videoModal");
-          const modalVideo = document.getElementById("modalVideo");
-      
-          modal.style.display = "none";
-          modalVideo.pause();
-          modalVideo.currentTime = 0;
-          modalVideo.src = "";
-        }
-      
-        // 모달 바깥 클릭 시 닫기
-        window.onclick = function (event) {
-          const modal = document.getElementById("videoModal");
-          if (event.target === modal) {
-            closeModal();
-          }
-        };
-    </script>
-
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">×</span>
-          <video id="modalVideo" src="" controls autoplay></video>
-        </div>
-    </div>
-    <script>
-      function setBackground(project) {
-        document.getElementById('bg-video').style.opacity = '0';
-        const backgrounds = {
-          rise: "assets/thumbnails/backgrounds/Rise.webp",
-          lostark: "assets/thumbnails/backgrounds/Lostark_Mobile.webp",
-          xrx: "assets/thumbnails/backgrounds/XRX.webp",
-          giant: "assets/thumbnails/backgrounds/Giant_Fishing.webp",
-          aboutme: "assets/thumbnails/backgrounds/aboutme.webp"
-        };
-
-        const image = backgrounds[project];
-        if (image) {
-          document.body.style.backgroundImage = `url('${image}')`;
-        }
-      }
-
-      function resetBackground() {
-        document.body.style.backgroundImage = "none"; // or 기본 이미지
-        document.getElementById('bg-video').style.opacity = '1'; // 동영상 다시 보이게
-      }
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.about_card, .card').forEach(card => {
-          card.addEventListener('mouseenter', () => {
-            document.getElementById('bg-canvas').classList.add('hidden');
-          });
-          card.addEventListener('mouseleave', () => {
-            document.getElementById('bg-canvas').classList.remove('hidden');
-          });
-        });
-      });
-    </script>
-
+  <script src="scripts/loader.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts/background.js"></script>
 </body>
 
 </html>

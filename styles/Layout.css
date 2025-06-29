@@ -1,0 +1,75 @@
+header {
+  text-align: center;
+  padding: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.section-title {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.title p {
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-130%);
+  z-index: 100;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav li {
+  margin: 1rem 0;
+}
+
+.side-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.side-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

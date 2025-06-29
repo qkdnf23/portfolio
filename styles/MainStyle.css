@@ -1,0 +1,18 @@
+/* 기본 전역 설정 */
+body {
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  background-image: url("assets/thumbnails/backgrounds/default_black.png");
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.2s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
