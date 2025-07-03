@@ -1,0 +1,49 @@
+.card, .about_card, .pre_card, .skill_card {
+  background: #1e1e1e;
+  text-align: center;
+  font-size: 36px;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card img,
+.about_card img,
+.pre_card img,
+.skill_card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+/* 각 카드 크기 및 위치 조절 */
+.card {
+  transform: scale(0.5);
+  margin: 3rem 0 8rem;
+}
+
+.card:hover {
+  transform: scale(0.6);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.about_card {
+  transform: scale(0.2);
+  margin: -45rem 0 -38rem;
+  font-size: 72px;
+}
+
+.about_card:hover {
+  transform: scale(0.25);
+}
+
+.pre_card,
+.skill_card {
+  transform: scale(0.4);
+  margin: -10rem 0 8rem;
+}
+
+.pre_card:hover,
+.skill_card:hover {
+  transform: scale(0.5);
+}
