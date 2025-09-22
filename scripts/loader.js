@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const sections = ["aboutme", "industryworks", "preindustry", "skills"];
+  const sections = ["industryworks", "preindustry", "skills"];
   const main = document.getElementById("main-content");
 
   // 모든 섹션 로드
