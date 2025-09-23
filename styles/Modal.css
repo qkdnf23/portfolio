@@ -8,22 +8,30 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(6px);
+  display: none; /* 기본은 안 보이게 */
+  align-items: center; /* 세로 중앙 */
+  justify-content: center; /* 가로 중앙 */
 }
 
 .modal-content {
-  position: absolute;
+  /* 중앙 정렬 관련 속성 제거 */
+  /* position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 80%;
-  padding: 2rem;
-  background: #121e35;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-  color: white;
-  animation: fadeIn 0.4s ease;
-}
+  transform: translate(-50%, -50%); */
 
+  max-width: 40%;
+  max-height: 40%;
+  padding: 10;                  /* 원한다면 조금 여백 줘도 됨 */
+  background: #000;            /* 영상 배경 */
+  border-radius: 8px;          /* 필요 없으면 0 */
+  color: white;
+
+  display: flex;               /* 안쪽 비디오를 꽉 채우게 */
+  align-items: center;
+  justify-content: center;
+
+  animation: fadeInOpacity 0.4s ease;
+}
 .modal video {
   width: 100%;
   height: auto;
@@ -40,12 +48,13 @@
 }
 
 .close {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  font-size: 36px;
+  position: absolute;   
+  top: 23vh;            
+  right: 30vw;          
+  font-size: 28px;
   color: white;
   cursor: pointer;
+  z-index: 2000;
 }
 
 @keyframes fadeIn {

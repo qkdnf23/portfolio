@@ -6,7 +6,7 @@ function playVideo(card) {
   if (!videoEl) return;
 
   modalVideo.src = videoEl.src;
-  modal.style.display = "block";
+  modal.style.display = "flex";
   modalVideo.play();
 }
 
@@ -27,7 +27,7 @@ function openSkillModal(card) {
 
   // 예: 기술 이름에 따라 skill_detail.html 내부에서 anchor 처리할 수도 있음
   frame.src = `sections/skill_detail.html#${encodeURIComponent(skillName)}`;
-  modal.style.display = "block";
+  modal.style.display = "flex";
 }
 
 function closeSkillModal() {
