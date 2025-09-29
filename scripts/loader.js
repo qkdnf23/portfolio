@@ -11,13 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     main.appendChild(div);
   }
 
-  // 🎬 영상 모달 삽입
-  const videoModalRes = await fetch("videoModal.html");
-  const videoModalHtml = await videoModalRes.text();
-  document.body.insertAdjacentHTML("beforeend", videoModalHtml);
-
-  // 🧠 스킬 모달 삽입
-  const skillModalRes = await fetch("skillModal.html");
+  // 🧠 스킬 모달Res = await fetch("skillModal.html");
   const skillModalHtml = await skillModalRes.text();
   document.body.insertAdjacentHTML("beforeend", skillModalHtml);
 });

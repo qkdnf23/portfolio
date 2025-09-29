@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로스트아크 모바일 - 작업 상세</title>
+  <link rel="stylesheet" href="../styles/MainStyle.css" />
+  <link rel="stylesheet" href="../styles/Layout.css" />
+  <link rel="stylesheet" href="../styles/CardStyle.css" />
+  <style>
+    .wrap{max-width:1100px;margin:80px auto;padding:0 20px;}
+    .crumbs a{color:#bbb;text-decoration:none}
+    .crumbs span{opacity:.6}
+    h1{font-size:2rem;margin:.6rem 0 1rem}
+    .meta{display:flex;gap:1rem;flex-wrap:wrap;margin:.5rem 0 1.2rem}
+    .pill{display:inline-block;background:#2a2a2a;color:#ddd;padding:.25rem .8rem;border-radius:999px;font-size:.85rem}
+    .hero{position:relative;border-radius:1rem;overflow:hidden;background:#111;margin:1rem 0 2rem;}
+    .hero video{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;display:block;background:#000;border-radius:.8rem;}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:1rem 0 2rem}
+    .grid img,.grid video{width:100%;height:auto;border-radius:.6rem;background:#000;display:block}
+    .kvs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .kvs .cardlet{background:#1a1a1a;border:1px solid rgba(255,255,255,.06);border-radius:.8rem;padding:12px}
+    .code{font-family: ui-monospace,SFMono-Regular,Consolas,monospace;background:#111;padding:.6rem .8rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.06)}
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .kvs{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="crumbs"><a href="../index.html">홈</a> <span>›</span> <a href="../index.html#industryworks">Industry-Works</a> <span>›</span> <strong>로스트아크 모바일</strong></div>
+    <h1>로스트아크 모바일 작업 상세</h1>
+
+    <div class="meta">
+      <span class="pill">엔진: Unreal Engine 5.x (모바일 타깃)</span>
+      <span class="pill">파트: TA / 엔진 & 파이프라인</span>
+      <span class="pill">역할: 셰이더 · 최적화 · 툴링 · R&D</span>
+    </div>
+
+    <div class="hero">
+      <video src="../assets/videos/LostarkMobile_Trailer.mp4" controls poster="../assets/thumbnails/LostarkMobile_Logo.webp"></video>
+    </div>
+
+    <h2>개요</h2>
+    <p>모바일 하드웨어 한계를 고려한 렌더링/파이프라인 설계와 제작자 경험(UX)을 높이는 도구화를 병행했습니다. 실제 아트/디자인팀과의 협업으로 <strong>성능-품질-작업속도</strong> 균형을 맞추는 것이 핵심 목표였습니다.</p>
+
+    <h2>담당 역할</h2>
+    <ul>
+      <li>모바일 대응 셰이더 제작 및 이식(PC → 모바일 피처 레벨 하향에 맞춘 경량화)</li>
+      <li>포스트 프로세스(아웃라인/하이라이트 등) 및 화면 기반 이펙트 검증</li>
+      <li>레벨/머티리얼/텍스처 규격 자동 점검 툴 제작(에디터 유틸리티 + PyQT)</li>
+      <li>대량 배치 최적화: <code>HISM/ISM</code> 자동 배치, 거리 컬링 디폴트·가드레일 적용</li>
+      <li>프로파일링 기반 최적화(메모리·디스크 사이즈, 드로우콜/쉐이더 컴파일 관리)</li>
+    </ul>
+
+    <h2>핵심 작업</h2>
+    <div class="kvs">
+      <div class="cardlet">
+        <h3>1) 셰이더 & 포스트</h3>
+        <ul>
+          <li>스텐실 기반 타겟팅/가려짐 아웃라인(모바일 정밀도 이슈 → <em>DeviceZ 함수</em> 보정)</li>
+          <li>모듈형 대기/환경 셰이더(시간·날씨 상태에 따른 조합: 번개, 비 등)</li>
+          <li>TSR 지터 이슈 회피 전략 수립(벨로시티 버퍼 활용 등)</li>
+        </ul>
+      </div>
+      <div class="cardlet">
+        <h3>2) 파이프라인 & 툴</h3>
+        <ul>
+          <li>Texture Atlas 자동화(아틀라스 생성·역전환, RT 베이킹, EUW GUI)</li>
+          <li>Asset Statements: 규격 초과 에셋 탐지/리포트(csv), 메모리/디스크 사이즈 조회</li>
+          <li>레벨 파라미터 저장/복원 유틸(PIE 세션 간 상태 유지)</li>
+        </ul>
+      </div>
+      <div class="cardlet">
+        <h3>3) 최적화</h3>
+        <ul>
+          <li>HISM/ISM 배처 · 디폴트 컬링 강제 및 누락 경고</li>
+          <li>나나이트/DF/Lumen 등 고가 기능 대체 경량 경로 제안 및 콘솔 튜닝</li>
+          <li>모바일 텍스처 메모리 예산 관리/다운샘플 규칙 수립</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>갤러리</h2>
+    <p>아래 영역에 PPT의 스틸샷/GIF를 배치합니다. 파일을 <code>assets/lostark/</code> 폴더에 넣으면 자동 경로만 맞추면 됩니다.</p>
+    <div class="grid">
+      <!-- 업로드한 이미지에 맞게 파일명만 교체하세요 -->
+      <img src="../assets/lostark/shot_01.webp" alt="로스트아크 모바일 작업 샷 1">
+      <img src="../assets/lostark/shot_02.webp" alt="로스트아크 모바일 작업 샷 2">
+      <video src="../assets/lostark/loop_01.mp4" autoplay muted loop playsinline></video>
+      <img src="../assets/lostark/shot_03.webp" alt="로스트아크 모바일 작업 샷 3">
+    </div>
+
+    <h2>기술 메모</h2>
+    <ul>
+      <li>모바일 정밀도 차이로 인한 스텐실 인덱싱 문제는 <em>DeviceZ 기반 깊이 보정</em>으로 해결.</li>
+      <li>TSR 지터는 <em>벨로시티 맵 렌더</em>를 통해 동적 오브젝트의 블러/고스트 억제.</li>
+      <li>대량 배치는 <code>HISM</code> 기본화로 드로우콜 절감, <em>거리 컬링 디폴트</em>로 누락 방지.</li>
+    </ul>
+
+    <a class="back-btn" href="../index.html#industryworks">← 목록으로</a>
+  </div>
+</body>
+</html>
